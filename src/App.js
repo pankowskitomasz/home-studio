@@ -1,8 +1,9 @@
 import "./sass/styles.scss";
 import React,{Component} from "react";
 import { BrowserRouter,Routes,Route } from "react-router-dom";
-import {paths} from "./config.js";
+import {paths,socialNav} from "./config.js";
 import Footer from "./components/footer";
+import PageNavbar from "./components/navbar";
 
 class App extends Component{
   render(){
@@ -11,10 +12,11 @@ class App extends Component{
     });
     return(
       <BrowserRouter>
+        <PageNavbar config={paths}/>
         <Routes>
           {routeContent}
         </Routes>
-        <Footer/>
+        <Footer socialMenu={socialNav}/>
       </BrowserRouter>
     )
   }
